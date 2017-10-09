@@ -225,7 +225,7 @@ class TESTask(object):
     def parse_listing(self, listing, inputs):
         for item in listing:
 
-            if "writable" in item:
+            if item.get("writable"):
                 raise UnsupportedRequirement(
                     "The TES spec does not allow for writable inputs"
                     )
